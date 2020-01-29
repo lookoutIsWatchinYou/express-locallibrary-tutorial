@@ -11,10 +11,13 @@ html(lang='en')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
     link(rel='stylesheet', href='/stylesheets/style.css')
 
+    script(src='/javascripts/layout.js')
   body
     div(class='container-fluid')
       div(class='row')
-        div(class='col-sm-2')
+        img(class="mobile-nav" src="images/menu.png")(id = "mobile") 
+
+        div(class='col-sm-2')(id="col2")
           block sidebar
             ul(class='sidebar-nav')
               li 
@@ -37,7 +40,7 @@ html(lang='en')
                 a(href='/catalog/book/create') Create new book
               li 
                 a(href='/catalog/bookinstance/create') Create new book instance (copy)
-                
+        
         div(class='col-sm-10')
           block content
           -//script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js') script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
