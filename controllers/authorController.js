@@ -3,6 +3,7 @@ const { sanitizeBody } = require('express-validator/filter');
 var Author = require('../models/author');
 var async = require('async');
 var Book = require('../models/book');
+var User = require('../models/user');
 var mongoose = require('mongoose');
 var moment=require("moment");
 var debug = require('debug')('author');
@@ -53,7 +54,7 @@ exports.author_detail = function(req, res,next) {
 };
 
 // Display Author create form on GET.
-exports.author_create_get = function(req, res, next) {       
+exports.author_create_get = function(req, res, next) { 
     res.render('author_form', { title: 'Create Author'});
 };
 // Handle Author create on POST.

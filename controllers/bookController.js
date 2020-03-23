@@ -2,16 +2,19 @@ var Book = require('../models/book');
 var Author = require('../models/author');
 var Genre = require('../models/genre');
 var BookInstance = require('../models/bookinstance');
-
+//import everything so we can use it in index 
+//only this controller does index
+//could have a sepearte one>?
 const { body,validationResult } = require('express-validator/check');
 const { sanitizeBody } = require('express-validator/filter');
 var async = require('async');
 var debug = require('debug')('book')
 console.log(debug.enabled);
 debug("heyyyy bookcontroller here")
-exports.index = function(req, res) {   
+exports.index = function(req, res) {   //grabs everything needed for home page
 
     async.parallel({
+        //just gets amount of each model
         book_count: function(callback) {
             Book.countDocuments({}, callback); // Pass an empty object as match condition to find all documents of this collection
         },

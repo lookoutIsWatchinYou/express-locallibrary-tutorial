@@ -4,6 +4,14 @@ block content
   -//find the title in bookController.js for some reason
   p Welcome to #[em !{title}], a very basic Express website developed as a tutorial example on the Mozilla Developer Network.
   h1 Dynamic content
+  h2 Log in here
+  
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='user') Admin:
+      input#user.form-control(type='text' placeholder='Enter Username' name='username' required='true')
+      input#user.form-control(type='text' placeholder='Enter Password' name='password' required='true')
 
   if error
     p Error getting dynamic content.
